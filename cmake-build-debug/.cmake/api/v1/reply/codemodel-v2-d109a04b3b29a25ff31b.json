@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/minhn/CLionProjects/DSA class/BaiTapLon/BankingSystem/cmake-build-debug",
-		"source" : "C:/Users/minhn/CLionProjects/DSA class/BaiTapLon/BankingSystem"
+		"build" : "C:/Users/Admin/Downloads/baitaplon/BankingCpp/cmake-build-debug",
+		"source" : "C:/Users/Admin/Downloads/baitaplon/BankingCpp"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 4
+		"minor" : 5
 	}
 }
