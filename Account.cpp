@@ -4,10 +4,9 @@
 
 #include "Account.h"
 using namespace std;
-Account::Account(string fname,string lname,float balance)
+Account::Account(string fname,string lname,string UserName,float balance)
 {
-    NextAccountNumber++;
-    UserName=NextAccountNumber;
+    this->UserName=UserName;
     firstName=fname;
     lastName=lname;
     this->balance=balance;
@@ -23,17 +22,9 @@ void Account::Withdraw(float amount)
         throw InsufficientFunds();
     balance-=amount;
 }
-void Account::setLastAccountNumber(long accountNumber)
-{
-    NextAccountNumber=accountNumber;
-}
-long Account::getLastAccountNumber()
-{
-    return NextAccountNumber;
-}
 ofstream & operator<<(ofstream &ofs,Account &acc)
 {
-    ofs<<acc.accountNumber<<endl;
+    ofs<<acc.UserName<<endl;
     ofs<<acc.firstName<<endl;
     ofs<<acc.lastName<<endl;
     ofs<<acc.balance<<endl;
@@ -41,7 +32,7 @@ ofstream & operator<<(ofstream &ofs,Account &acc)
 }
 ifstream & operator>>(ifstream &ifs,Account &acc)
 {
-    ifs>>acc.accountNumber;
+    ifs>>acc.UserName;
     ifs>>acc.firstName;
     ifs>>acc.lastName;
     ifs>>acc.balance;
@@ -52,7 +43,7 @@ ostream & operator<<(ostream &os,Account &acc)
 {
     os<<"First Name:"<<acc.getFirstName()<<endl;
     os<<"Last Name:"<<acc.getLastName()<<endl;
-    os<<"Account Number:"<<acc.getAccNo()<<endl;
+    os<<"UserName:"<<acc.getAccNo()<<endl;
     os<<"Balance:"<<acc.getBalance()<<endl;
     return os;
 }
