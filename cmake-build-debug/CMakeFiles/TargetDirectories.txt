@@ -1,3 +1,9 @@
+<<<<<<< Updated upstream
 C:/Users/Admin/Downloads/baitaplon/BankingCpp/cmake-build-debug/CMakeFiles/BankingSystem.dir
 C:/Users/Admin/Downloads/baitaplon/BankingCpp/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/Admin/Downloads/baitaplon/BankingCpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+=======
+C:/Users/minhn/CLionProjects/cDSA/Baitaplon/BankingCpp/cmake-build-debug/CMakeFiles/BankingSystem.dir
+C:/Users/minhn/CLionProjects/cDSA/Baitaplon/BankingCpp/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/minhn/CLionProjects/cDSA/Baitaplon/BankingCpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+>>>>>>> Stashed changes

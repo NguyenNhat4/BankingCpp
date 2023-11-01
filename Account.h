@@ -11,8 +11,8 @@
 #include<map>
 #define MIN_BALANCE 500
 using namespace std;
-class InsufficientFunds{};
-static long NextAccountNumber = 0;
+
+
 class Account
 {
 private:
@@ -23,16 +23,14 @@ private:
 public:
 
     Account(){}
-    Account(string fname,string lname,float balance);
-    long getAccNo(){return UserName;}
+    Account(string fname,string lname,string UserName,float balance);
     string getFirstName(){return firstName;}
     string getLastName(){return lastName;}
+    string getAccUserName(){return UserName;}
     float getBalance(){return balance;}
-
     void Deposit(float amount);
     void Withdraw(float amount);
-    static void setLastUserName(string UserName);
-    static long getLastAccountNumber();
+
     friend ofstream & operator<<(ofstream &ofs,Account &acc);
     friend ifstream & operator>>(ifstream &ifs,Account &acc);
     friend ostream & operator<<(ostream &os,Account &acc);

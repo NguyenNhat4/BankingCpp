@@ -1,8 +1,7 @@
-//
-// Created by minhn on 10/17/2023.
-//
+
 
 #include "Account.h"
+#include <iostream>
 using namespace std;
 Account::Account(string fname,string lname,string UserName,float balance)
 {
@@ -19,7 +18,7 @@ void Account::Withdraw(float amount)
 {
 
     if(balance - amount < MIN_BALANCE)
-        throw InsufficientFunds();
+        cout<< "Account's insufficient"<<endl;
     balance-=amount;
 }
 ofstream & operator<<(ofstream &ofs,Account &acc)
@@ -43,7 +42,7 @@ ostream & operator<<(ostream &os,Account &acc)
 {
     os<<"First Name:"<<acc.getFirstName()<<endl;
     os<<"Last Name:"<<acc.getLastName()<<endl;
-    os<<"UserName:"<<acc.getAccNo()<<endl;
+    os<<"UserName:"<<acc.getAccUserName()<<endl;
     os<<"Balance:"<<acc.getBalance()<<endl;
     return os;
 }

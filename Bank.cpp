@@ -9,15 +9,15 @@ Bank::Bank()
     infile.open("Bank.data");
     if(!infile)
     {
-        //cout<<"Error in Opening! File Not Found!!"<<endl;
+        cout<<"Error in Opening! File Not Found!!"<<endl;
         return;
     }
     while(!infile.eof())
     {
         infile>>account;
-        accounts.insert(pair<long,Account>(account.getAccNo(),account));
+        accounts.insert(pair<long,Account>(account.getAccUserName(),account));
     }
-    Account::setLastUserName(account.getAccNo());
+
 
     infile.close();
 
@@ -26,7 +26,7 @@ Account Bank::OpenAccount(string fname,string lname,string UserName,float balanc
 {
     ofstream outfile;
     Account account(fname,lname,UserName,balance);
-    accounts.insert(pair<long,Account>(account.getAccNo(),account));
+    accounts.insert(pair<long,Account>(account.getAccUserName(),account));
 
     outfile.open("Bank.data", ios::trunc);
 
@@ -39,16 +39,16 @@ Account Bank::OpenAccount(string fname,string lname,string UserName,float balanc
     return account;
 }
 
-Account Bank::BalanceEnquiry(long accountNumber)
+Account Bank::BalanceEnquiry(string Us)
 {
-    map<long,Account>::iterator itr=accounts.find(accountNumber);
+    map<long,Account>::iterator itr= accounts.find(Us);
     return itr->second;
 }
 
 
-Account Bank::Deposit(long accountNumber,float amount)
+Account Bank::Deposit(string UserName,float amount)
 {
-    map<long,Account>::iterator itr=accounts.find(accountNumber);
+    map<long,Account>::iterator itr=accounts.find(UserName);
     itr->second.Deposit(amount);
     return itr->second;
 }
@@ -62,11 +62,11 @@ Account Bank::Withdraw(long accountNumber,float amount)
 }
 
 
-void Bank::CloseAccount(long accountNumber)
+void Bank::CloseAccount(string us)
 {
-    map<long,Account>::iterator itr=accounts.find(accountNumber);
+    map<long,Account>::iterator itr=accounts.find(us);
     cout <<"Account Deleted"<<itr->second;
-    accounts.erase(accountNumber);
+    accounts.erase(us);
 }
 void Bank::ShowAllAccounts()
 {
