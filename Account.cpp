@@ -7,7 +7,7 @@ using namespace std;
 Account::Account(string fname,string lname,float balance)
 {
     NextAccountNumber++;
-    accountNumber=NextAccountNumber;
+    UserName=NextAccountNumber;
     firstName=fname;
     lastName=lname;
     this->balance=balance;

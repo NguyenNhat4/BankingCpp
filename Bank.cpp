@@ -17,15 +17,15 @@ Bank::Bank()
         infile>>account;
         accounts.insert(pair<long,Account>(account.getAccNo(),account));
     }
-    Account::setLastAccountNumber(account.getAccNo());
+    Account::setLastUserName(account.getAccNo());
 
     infile.close();
 
 }
-Account Bank::OpenAccount(string fname,string lname,float balance)
+Account Bank::OpenAccount(string fname,string lname,string UserName,float balance)
 {
     ofstream outfile;
-    Account account(fname,lname,balance);
+    Account account(fname,lname,UserName,balance);
     accounts.insert(pair<long,Account>(account.getAccNo(),account));
 
     outfile.open("Bank.data", ios::trunc);

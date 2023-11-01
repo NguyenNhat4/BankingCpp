@@ -8,7 +8,7 @@ int main() {
 
     int choice;
     string fname,lname;
-    long accountNumber;
+    string UserName;
     float balance;
     float amount;
     cout<<"***Banking System***"<<endl;
@@ -31,41 +31,43 @@ int main() {
                 cin>>fname;
                 cout<<"Enter Last Name: ";
                 cin>>lname;
+                cout<<"Enter User Name: ";
+                cin>>UserName;
                 cout<<"Enter initil Balance: ";
                 cin>>balance;
-                acc=b.OpenAccount(fname,lname,balance);
+                acc=b.OpenAccount(fname,lname,UserName,balance);
                 cout<<endl<<"Congradulation Account is Created"<<endl;
                 cout<<acc;
                 break;
             case 2:
-                cout<<"Enter Account Number:";
-                cin>>accountNumber;
-                acc=b.BalanceEnquiry(accountNumber);
+                cout<<"Enter User Name:";
+                cin>>UserName;
+                acc=b.BalanceEnquiry(UserName);
                 cout<<endl<<"Your Account Details"<<endl;
                 cout<<acc;
                 break;
             case 3:
-                cout<<"Enter Account Number:";
-                cin>>accountNumber;
+                cout<<"Enter User Name:";
+                cin>>UserName;
                 cout<<"Enter Balance:";
                 cin>>amount;
-                acc=b.Deposit(accountNumber, amount);
+                acc=b.Deposit(UserName, amount);
                 cout<<endl<<"Amount is Deposited"<<endl;
                 cout<<acc;
                 break;
             case 4:
-                cout<<"Enter Account Number:";
-                cin>>accountNumber;
+                cout<<"Enter User Name:";
+                cin>>UserName;
                 cout<<"Enter Balance:";
                 cin>>amount;
-                acc=b.Withdraw(accountNumber, amount);
+                acc=b.Withdraw(UserName, amount);
                 cout<<endl<<"Amount Withdrawn"<<endl;
                 cout<<acc;
                 break;
             case 5:
-                cout<<"Enter Account Number:";
-                cin>>accountNumber;
-                b.CloseAccount(accountNumber);
+                cout<<"Enter User Name:";
+                cin>>UserName;
+                b.CloseAccount(UserName);
                 cout<<endl<<"Account is Closed"<<endl;
                 cout<<acc;
             case 6:

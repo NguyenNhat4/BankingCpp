@@ -16,7 +16,7 @@ static long NextAccountNumber = 0;
 class Account
 {
 private:
-    long accountNumber;
+    string UserName;
     string firstName;
     string lastName;
     float balance;
@@ -24,14 +24,14 @@ public:
 
     Account(){}
     Account(string fname,string lname,float balance);
-    long getAccNo(){return accountNumber;}
+    long getAccNo(){return UserName;}
     string getFirstName(){return firstName;}
     string getLastName(){return lastName;}
     float getBalance(){return balance;}
 
     void Deposit(float amount);
     void Withdraw(float amount);
-    static void setLastAccountNumber(long accountNumber);
+    static void setLastUserName(string UserName);
     static long getLastAccountNumber();
     friend ofstream & operator<<(ofstream &ofs,Account &acc);
     friend ifstream & operator>>(ifstream &ifs,Account &acc);
