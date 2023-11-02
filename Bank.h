@@ -5,7 +5,7 @@
 class Bank
 {
 private:
-    map<long,Account> accounts;
+    map<string,Account> accounts;
 public:
     Bank();
     Account OpenAccount(string fname,string lname,string UserName, float balance);
