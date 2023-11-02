@@ -16,6 +16,4 @@ public:
     void ShowAllAccounts();
     ~Bank();
 };
-
-
 #endif //BANKINGSYSTEM_BANK_H

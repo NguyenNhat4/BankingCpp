@@ -24,6 +24,7 @@ Bank::Bank()
 }
 Account Bank::OpenAccount(string fname,string lname,string UserName,float balance)
 {
+    //
     ofstream outfile;
     Account account(fname,lname,UserName,balance);
     accounts.insert(pair<string,Account>(account.getAccUserName(),account));
@@ -84,7 +85,7 @@ Bank::~Bank()
     map<string,Account>::iterator itr;
     for(itr=accounts.begin();itr!=accounts.end();itr++)
     {
-        outfile<<itr->second;
+    outfile<<itr->second;
     }
     outfile.close();
 }

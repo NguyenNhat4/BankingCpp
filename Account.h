@@ -1,7 +1,6 @@
 //
 // Created by minhn on 10/17/2023.
 //
-
 #ifndef BANKINGSYSTEM_ACCOUNT_H
 #define BANKINGSYSTEM_ACCOUNT_H
 #include<string>
@@ -9,6 +8,7 @@
 #include<cstdlib>
 #include<vector>
 #include<map>
+#include "HISTORY_TRANSITION_LIST.h"
 #define MIN_BALANCE 500
 using namespace std;
 
@@ -16,6 +16,7 @@ using namespace std;
 class Account
 {
 private:
+    HISTORY_TRANSITION_LIST *h_list;
     string UserName;
     string firstName;
     string lastName;
@@ -30,10 +31,10 @@ public:
     float getBalance(){return balance;}
     void Deposit(float amount);
     void Withdraw(float amount);
-
     friend ofstream & operator<<(ofstream &ofs,Account &acc);
     friend ifstream & operator>>(ifstream &ifs,Account &acc);
     friend ostream & operator<<(ostream &os,Account &acc);
+
 };
 
 

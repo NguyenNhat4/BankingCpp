@@ -52,17 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< Updated upstream
-CMAKE_SOURCE_DIR = C:\Users\Admin\Downloads\baitaplon\BankingCpp
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Admin\Downloads\baitaplon\BankingCpp\cmake-build-debug
-=======
 CMAKE_SOURCE_DIR = C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\cmake-build-debug
->>>>>>> Stashed changes
 
 # Include any dependencies generated for this target.
 include CMakeFiles/BankingSystem.dir/depend.make
@@ -76,48 +69,6 @@ include CMakeFiles/BankingSystem.dir/progress.make
 include CMakeFiles/BankingSystem.dir/flags.make
 
 CMakeFiles/BankingSystem.dir/main.cpp.obj: CMakeFiles/BankingSystem.dir/flags.make
-<<<<<<< Updated upstream
-CMakeFiles/BankingSystem.dir/main.cpp.obj: C:/Users/Admin/Downloads/baitaplon/BankingCpp/main.cpp
-CMakeFiles/BankingSystem.dir/main.cpp.obj: CMakeFiles/BankingSystem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Admin\Downloads\baitaplon\BankingCpp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BankingSystem.dir/main.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BankingSystem.dir/main.cpp.obj -MF CMakeFiles\BankingSystem.dir\main.cpp.obj.d -o CMakeFiles\BankingSystem.dir\main.cpp.obj -c C:\Users\Admin\Downloads\baitaplon\BankingCpp\main.cpp
-
-CMakeFiles/BankingSystem.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BankingSystem.dir/main.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\Downloads\baitaplon\BankingCpp\main.cpp > CMakeFiles\BankingSystem.dir\main.cpp.i
-
-CMakeFiles/BankingSystem.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BankingSystem.dir/main.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\Downloads\baitaplon\BankingCpp\main.cpp -o CMakeFiles\BankingSystem.dir\main.cpp.s
-
-CMakeFiles/BankingSystem.dir/Account.cpp.obj: CMakeFiles/BankingSystem.dir/flags.make
-CMakeFiles/BankingSystem.dir/Account.cpp.obj: C:/Users/Admin/Downloads/baitaplon/BankingCpp/Account.cpp
-CMakeFiles/BankingSystem.dir/Account.cpp.obj: CMakeFiles/BankingSystem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Admin\Downloads\baitaplon\BankingCpp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BankingSystem.dir/Account.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BankingSystem.dir/Account.cpp.obj -MF CMakeFiles\BankingSystem.dir\Account.cpp.obj.d -o CMakeFiles\BankingSystem.dir\Account.cpp.obj -c C:\Users\Admin\Downloads\baitaplon\BankingCpp\Account.cpp
-
-CMakeFiles/BankingSystem.dir/Account.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BankingSystem.dir/Account.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\Downloads\baitaplon\BankingCpp\Account.cpp > CMakeFiles\BankingSystem.dir\Account.cpp.i
-
-CMakeFiles/BankingSystem.dir/Account.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BankingSystem.dir/Account.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\Downloads\baitaplon\BankingCpp\Account.cpp -o CMakeFiles\BankingSystem.dir\Account.cpp.s
-
-CMakeFiles/BankingSystem.dir/Bank.cpp.obj: CMakeFiles/BankingSystem.dir/flags.make
-CMakeFiles/BankingSystem.dir/Bank.cpp.obj: C:/Users/Admin/Downloads/baitaplon/BankingCpp/Bank.cpp
-CMakeFiles/BankingSystem.dir/Bank.cpp.obj: CMakeFiles/BankingSystem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Admin\Downloads\baitaplon\BankingCpp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BankingSystem.dir/Bank.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BankingSystem.dir/Bank.cpp.obj -MF CMakeFiles\BankingSystem.dir\Bank.cpp.obj.d -o CMakeFiles\BankingSystem.dir\Bank.cpp.obj -c C:\Users\Admin\Downloads\baitaplon\BankingCpp\Bank.cpp
-
-CMakeFiles/BankingSystem.dir/Bank.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BankingSystem.dir/Bank.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\Downloads\baitaplon\BankingCpp\Bank.cpp > CMakeFiles\BankingSystem.dir\Bank.cpp.i
-
-CMakeFiles/BankingSystem.dir/Bank.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BankingSystem.dir/Bank.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\Downloads\baitaplon\BankingCpp\Bank.cpp -o CMakeFiles\BankingSystem.dir\Bank.cpp.s
-=======
 CMakeFiles/BankingSystem.dir/main.cpp.obj: C:/Users/minhn/CLionProjects/cDSA/Baitaplon/BankingCpp/main.cpp
 CMakeFiles/BankingSystem.dir/main.cpp.obj: CMakeFiles/BankingSystem.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BankingSystem.dir/main.cpp.obj"
@@ -158,13 +109,27 @@ CMakeFiles/BankingSystem.dir/Bank.cpp.i: cmake_force
 CMakeFiles/BankingSystem.dir/Bank.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BankingSystem.dir/Bank.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\Bank.cpp -o CMakeFiles\BankingSystem.dir\Bank.cpp.s
->>>>>>> Stashed changes
+
+CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.obj: CMakeFiles/BankingSystem.dir/flags.make
+CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.obj: C:/Users/minhn/CLionProjects/cDSA/Baitaplon/BankingCpp/HISTORY_TRANSITION_LIST.cpp
+CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.obj: CMakeFiles/BankingSystem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.obj -MF CMakeFiles\BankingSystem.dir\HISTORY_TRANSITION_LIST.cpp.obj.d -o CMakeFiles\BankingSystem.dir\HISTORY_TRANSITION_LIST.cpp.obj -c C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\HISTORY_TRANSITION_LIST.cpp
+
+CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\HISTORY_TRANSITION_LIST.cpp > CMakeFiles\BankingSystem.dir\HISTORY_TRANSITION_LIST.cpp.i
+
+CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\HISTORY_TRANSITION_LIST.cpp -o CMakeFiles\BankingSystem.dir\HISTORY_TRANSITION_LIST.cpp.s
 
 # Object files for target BankingSystem
 BankingSystem_OBJECTS = \
 "CMakeFiles/BankingSystem.dir/main.cpp.obj" \
 "CMakeFiles/BankingSystem.dir/Account.cpp.obj" \
-"CMakeFiles/BankingSystem.dir/Bank.cpp.obj"
+"CMakeFiles/BankingSystem.dir/Bank.cpp.obj" \
+"CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.obj"
 
 # External object files for target BankingSystem
 BankingSystem_EXTERNAL_OBJECTS =
@@ -172,15 +137,12 @@ BankingSystem_EXTERNAL_OBJECTS =
 BankingSystem.exe: CMakeFiles/BankingSystem.dir/main.cpp.obj
 BankingSystem.exe: CMakeFiles/BankingSystem.dir/Account.cpp.obj
 BankingSystem.exe: CMakeFiles/BankingSystem.dir/Bank.cpp.obj
+BankingSystem.exe: CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.obj
 BankingSystem.exe: CMakeFiles/BankingSystem.dir/build.make
 BankingSystem.exe: CMakeFiles/BankingSystem.dir/linkLibs.rsp
 BankingSystem.exe: CMakeFiles/BankingSystem.dir/objects1.rsp
 BankingSystem.exe: CMakeFiles/BankingSystem.dir/link.txt
-<<<<<<< Updated upstream
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Admin\Downloads\baitaplon\BankingCpp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable BankingSystem.exe"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable BankingSystem.exe"
->>>>>>> Stashed changes
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable BankingSystem.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\BankingSystem.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -192,10 +154,6 @@ CMakeFiles/BankingSystem.dir/clean:
 .PHONY : CMakeFiles/BankingSystem.dir/clean
 
 CMakeFiles/BankingSystem.dir/depend:
-<<<<<<< Updated upstream
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Admin\Downloads\baitaplon\BankingCpp C:\Users\Admin\Downloads\baitaplon\BankingCpp C:\Users\Admin\Downloads\baitaplon\BankingCpp\cmake-build-debug C:\Users\Admin\Downloads\baitaplon\BankingCpp\cmake-build-debug C:\Users\Admin\Downloads\baitaplon\BankingCpp\cmake-build-debug\CMakeFiles\BankingSystem.dir\DependInfo.cmake --color=$(COLOR)
-=======
 	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\cmake-build-debug C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\cmake-build-debug C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\cmake-build-debug\CMakeFiles\BankingSystem.dir\DependInfo.cmake --color=$(COLOR)
->>>>>>> Stashed changes
 .PHONY : CMakeFiles/BankingSystem.dir/depend
 

@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/BankingSystem.dir/Account.cpp.obj.d"
   "CMakeFiles/BankingSystem.dir/Bank.cpp.obj"
   "CMakeFiles/BankingSystem.dir/Bank.cpp.obj.d"
+  "CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.obj"
+  "CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.obj.d"
   "CMakeFiles/BankingSystem.dir/main.cpp.obj"
   "CMakeFiles/BankingSystem.dir/main.cpp.obj.d"
   "libBankingSystem.dll.a"

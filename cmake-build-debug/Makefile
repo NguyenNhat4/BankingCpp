@@ -56,17 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< Updated upstream
-CMAKE_SOURCE_DIR = C:\Users\Admin\Downloads\baitaplon\BankingCpp
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Admin\Downloads\baitaplon\BankingCpp\cmake-build-debug
-=======
 CMAKE_SOURCE_DIR = C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\cmake-build-debug
->>>>>>> Stashed changes
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -93,15 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-<<<<<<< Updated upstream
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Admin\Downloads\baitaplon\BankingCpp\cmake-build-debug\CMakeFiles C:\Users\Admin\Downloads\baitaplon\BankingCpp\cmake-build-debug\\CMakeFiles\progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Admin\Downloads\baitaplon\BankingCpp\cmake-build-debug\CMakeFiles 0
-=======
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\cmake-build-debug\CMakeFiles C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\minhn\CLionProjects\cDSA\Baitaplon\BankingCpp\cmake-build-debug\CMakeFiles 0
->>>>>>> Stashed changes
 .PHONY : all
 
 # The main clean target
@@ -189,6 +176,30 @@ Bank.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BankingSystem.dir\build.make CMakeFiles/BankingSystem.dir/Bank.cpp.s
 .PHONY : Bank.cpp.s
 
+HISTORY_TRANSITION_LIST.obj: HISTORY_TRANSITION_LIST.cpp.obj
+.PHONY : HISTORY_TRANSITION_LIST.obj
+
+# target to build an object file
+HISTORY_TRANSITION_LIST.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BankingSystem.dir\build.make CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.obj
+.PHONY : HISTORY_TRANSITION_LIST.cpp.obj
+
+HISTORY_TRANSITION_LIST.i: HISTORY_TRANSITION_LIST.cpp.i
+.PHONY : HISTORY_TRANSITION_LIST.i
+
+# target to preprocess a source file
+HISTORY_TRANSITION_LIST.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BankingSystem.dir\build.make CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.i
+.PHONY : HISTORY_TRANSITION_LIST.cpp.i
+
+HISTORY_TRANSITION_LIST.s: HISTORY_TRANSITION_LIST.cpp.s
+.PHONY : HISTORY_TRANSITION_LIST.s
+
+# target to generate assembly for a file
+HISTORY_TRANSITION_LIST.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BankingSystem.dir\build.make CMakeFiles/BankingSystem.dir/HISTORY_TRANSITION_LIST.cpp.s
+.PHONY : HISTORY_TRANSITION_LIST.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -228,6 +239,9 @@ help:
 	@echo ... Bank.obj
 	@echo ... Bank.i
 	@echo ... Bank.s
+	@echo ... HISTORY_TRANSITION_LIST.obj
+	@echo ... HISTORY_TRANSITION_LIST.i
+	@echo ... HISTORY_TRANSITION_LIST.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

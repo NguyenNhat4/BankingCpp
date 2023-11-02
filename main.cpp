@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Bank.h"
+using namespace std;
 
 int main() {
     Bank b;
@@ -10,7 +11,7 @@ int main() {
     string UserName;
     float balance;
     float amount;
-    cout<<"***Banking System***"<<endl;
+    cout<<"***  Managing Banking System  ***"<<endl;
     do
     {
         cout<<"\n\tSelect one option below ";
@@ -32,10 +33,10 @@ int main() {
                 cin>>lname;
                 cout<<"Enter User Name: ";
                 cin>>UserName;
-                cout<<"Enter initil Balance: ";
+                cout<<"Enter initial Balance: ";
                 cin>>balance;
                 acc=b.OpenAccount(fname,lname,UserName,balance);
-                cout<<endl<<"Congradulation Account is Created"<<endl;
+                cout<<endl<<"Congradulation Account is Created!!"<<endl;
                 cout<<acc;
                 break;
             case 2:
