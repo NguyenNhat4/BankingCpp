@@ -92,9 +92,11 @@ void Bank::OpenAccount()
 
     ofstream outfile;
     Account newAccount(fname, lname, UserName, balance);
+
+    sorted_accounts.insert(pair<float, Account>(newAccount.getBalance(), newAccount));
     accounts.insert(pair<string, Account>(newAccount.getAccUserName(), newAccount));
 
-    outfile.open("data.txt", ios::trunc);
+    outfile.open("data.txt", ios::app);
 
     if (!outfile.is_open())
     {
