@@ -2,52 +2,42 @@
 
 #include "Account.h"
 #include <iostream>
+#include <iomanip>
 using namespace std;
-Account::Account(string fname,string lname,string UserName,float blance)
-{
-    this->UserName=UserName;
-    firstName=fname;
-    lastName=lname;
-    balance=blance;
-    h_list  = new HISTORY_TRANSITION_LIST(balance,"Create account");
+    string Account::getFirstName()const{return firstName;}
+    string Account::getLastName()const{return lastName;}
+    string Account::getAccUserName() const{return UserName;}
+    void Account::setFirstName(string fn){firstName = fn;}
+    void Account::setUsername(string usn){UserName = usn;}
+    void Account::setBalance(float bl){balance = bl;}
+    void Account::setLastName(string ln){lastName = ln;}
+    float Account::getBalance() const {return balance;}
+Account::Account(){
+UserName = "NULL";
+firstName = "NULL";
+lastName = "NULL";
+balance = 0;
 }
-void Account::Deposit(float amount)
+Account::Account(string fname, string lname, string UserName, float balance)
+    : UserName(UserName), firstName(fname), lastName(lname), balance(balance) 
 {
-    balance+=amount;
-    h_list->fill_In_History_info(amount,"deposit");
+}
+void Account::Deposit(float amount){
+    balance =  balance + amount;
+     cout << "\n\nAmount deposited successfully. Updated balance: " << balance << endl;
 }
 void Account::Withdraw(float amount)
 {
-    if(balance - amount < MIN_BALANCE) {
+    if(balance - amount < 10) {
         cout << "Account's insufficient" << endl;
      return;
     }
     balance-=amount;
-    h_list->fill_In_History_info(amount,"withdraw");
 }
-ofstream & operator<<(ofstream &ofs,Account &acc)
-{
-    ofs<<acc.UserName<<endl;
-    ofs<<acc.firstName<<endl;
-    ofs<<acc.lastName<<endl;
-    ofs<<acc.balance<<endl;
 
-    return ofs;
+void Account::printInfo(){
+    cout<< left << setw(12)<<" " <<setw(25) <<this->UserName << left <<std::setw(25) << lastName << std::setw(25) <<firstName << std::setw(25)<< balance<<endl;
 }
-ifstream & operator>>(ifstream &ifs,Account &acc)
-{
-    ifs>>acc.UserName;
-    ifs>>acc.firstName;
-    ifs>>acc.lastName;
-    ifs>>acc.balance;
-    return ifs;
 
-}
-ostream & operator<<(ostream &os,Account &acc)
-{
-    os<<"First Name:"<<acc.getFirstName()<<endl;
-    os<<"Last Name:"<<acc.getLastName()<<endl;
-    os<<"UserName:"<<acc.getAccUserName()<<endl;
-    os<<"Balance:"<<acc.getBalance()<<endl;
-    return os;
-}
+
+ 

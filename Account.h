@@ -7,34 +7,40 @@
 #include<fstream>
 #include<cstdlib>
 #include<vector>
+#include <iomanip>
 #include<map>
-#include "HISTORY_TRANSITION_LIST.h"
-#define MIN_BALANCE 500
+#include <cctype>
+// #include "HISTORY_TRANSITION_LIST.h"
+
+
 using namespace std;
 
 
 class Account
 {
 private:
-    HISTORY_TRANSITION_LIST *h_list;
+    // HISTORY_TRANSITION_LIST acc_history_list;
     string UserName;
     string firstName;
     string lastName;
     float balance;
 public:
 
-    Account(){}
+    Account();
     Account(string fname,string lname,string UserName,float balance);
-    string getFirstName(){return firstName;}
-    string getLastName(){return lastName;}
-    string getAccUserName(){return UserName;}
-    float getBalance(){return balance;}
+    string getFirstName()const;
+    string getLastName()const;
+    string getAccUserName() const;
+    float getBalance() const;
+    void setFirstName(string fn);
+    void setUsername(string usn);
+    void setBalance(float bl);
+    void setLastName(string ln);
     void Deposit(float amount);
     void Withdraw(float amount);
-    friend ofstream & operator<<(ofstream &ofs,Account &acc);
-    friend ifstream & operator>>(ifstream &ifs,Account &acc);
-    friend ostream & operator<<(ostream &os,Account &acc);
-
+    // void printAccountActivity(int &num);
+    void printInfo();
+   ~Account(){}
 };
 
 

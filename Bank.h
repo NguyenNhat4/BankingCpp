@@ -2,18 +2,32 @@
 #ifndef BANKINGSYSTEM_BANK_H
 #define BANKINGSYSTEM_BANK_H
 #include "Account.h"
+#include <sstream>
+#include<vector>
+#include <typeinfo>
+#include<algorithm>
+bool isNumber(const string& s);
+void printTitle();
 class Bank
 {
 private:
     map<string,Account> accounts;
+    multimap<float,Account> sorted_accounts; 
+    bool isSorted;
 public:
     Bank();
-    Account OpenAccount(string fname,string lname,string UserName, float balance);
-    Account BalanceEnquiry(string UserName);
-    Account Deposit(string UserName,float amount);
-    Account Withdraw(string UserName,float amount);
-    void CloseAccount(string UserName);
+    void  clearSorted();
+    void OpenAccount();
+    void BalanceEnquiry();
+    void Deposit();
+    void Withdraw();
+    void CloseAccount();
     void ShowAllAccounts();
+    void parseAccountInfo(const string& line);
+    void ShowTheAllSortedAccountsByBalanceInAscendingOrder();
+     void ShowTheAllSortedAccountsByBalanceInDescendingOrder();
+    // void ShowTransitionHistory();
     ~Bank();
 };
 #endif //BANKINGSYSTEM_BANK_H
+

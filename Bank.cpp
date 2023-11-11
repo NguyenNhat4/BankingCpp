@@ -1,91 +1,382 @@
 #include <iostream>
 #include "Bank.h"
 using namespace std;
+void printTitle()
+{
+    cout << left << setw(12) << "Index" << setw(25) << "Username" << left << std::setw(25) << "Lastname" << std::setw(25) << "FirstName" << std::setw(25) << "Balance";
 
+    cout << "\n"
+         << left << setw(110) << "________________________________________________________________________________________________________" << endl;
+}
+void Bank::parseAccountInfo(const string &line)
+{
+    string username, firstname, lastname;
+    float balance;
+
+    istringstream iss(line);
+    getline(iss, username, ',');
+    getline(iss, firstname, ',');
+    getline(iss, lastname, ',');
+    iss >> balance;  
+    if (!username.empty() && !firstname.empty() && !lastname.empty())
+    {
+        auto itr = accounts.find(username);
+        if(itr!=accounts.end()) return;
+        Account account(firstname, lastname, username, balance);
+        sorted_accounts.insert(pair<float, Account>(account.getBalance(), account));
+        accounts.insert(pair<string, Account>(account.getAccUserName(), account));
+    }
+}
 Bank::Bank()
 {
-    Account account;
     ifstream infile;
-    infile.open("Bank.data");
-    if(!infile)
+    isSorted = false;
+    infile.open("data.txt");
+    if (!infile.is_open())
     {
-        cout<<"Error in Opening! File Not Found!!"<<endl;
+        cout << "Error in Opening! File Not Found!!" << endl;
         return;
     }
-    while(!infile.eof())
+    string input;
+    while (getline(infile, input))
     {
-        infile>>account;
-        accounts.insert(pair<string,Account>(account.getAccUserName(),account));
+        if (!input.empty())
+        {
+            parseAccountInfo(input);
+        }
     }
-
-
     infile.close();
-
 }
-Account Bank::OpenAccount(string fname,string lname,string UserName,float balance)
+
+bool isNumber(const string &s)
 {
-    //
-    ofstream outfile;
-    Account account(fname,lname,UserName,balance);
-    accounts.insert(pair<string,Account>(account.getAccUserName(),account));
-
-    outfile.open("Bank.data", ios::trunc);
-
-    map<string,Account>::iterator itr;
-    for(itr=accounts.begin();itr != accounts.end();itr++)
+    for (char const &ch : s)
     {
-        outfile<<itr->second;
+        if (std::isdigit(ch) == 0)
+            return false;
     }
+    return true;
+}
+void Bank::OpenAccount()
+{
+    string fname, lname;
+    string UserName;
+    float balance;
+    string balance_tmp;
+    float amount;
+    cout << "Enter First Name: ";
+    cin >> fname;
+    cout << "Enter Last Name: ";
+    cin >> lname;
+    cout << "Create UserName for account: ";
+    cin >> UserName;
+    auto it = accounts.find(UserName);
+    while (it != accounts.end() && accounts.size() > 1)
+    {
+        cout << "This username exists, try another one: ";
+        cin >> UserName;
+        it = accounts.find(UserName);
+    }
+
+    cout << "Enter initial Balance: ";
+    cin >> balance_tmp;
+    while (!isNumber(balance_tmp))
+    {
+        cout << "Please Enter a Number for initial Balance: ";
+        cin >> balance_tmp;
+    }
+    balance = stoi(balance_tmp);
+
+    ofstream outfile;
+    Account newAccount(fname, lname, UserName, balance);
+    accounts.insert(pair<string, Account>(newAccount.getAccUserName(), newAccount));
+
+    outfile.open("data.txt", ios::trunc);
+
+    if (!outfile.is_open())
+    {
+        cout << "Error in Opening File!" << endl;
+        return;
+    }
+    outfile << UserName << ';';
+    outfile << fname << ';';
+    outfile << lname << ';';
+    outfile << balance << " " << endl;
     outfile.close();
-    return account;
+
+    cout << "\n\n"
+         << endl;
+    printTitle();
+    newAccount.printInfo();
+
+    cout << "\n\n";
+    cout << endl
+         << "ACCOUNT HAS BEEN INITIALIZED !!!" << endl;
 }
-
-Account Bank::BalanceEnquiry(string Us)
+void Bank::BalanceEnquiry()
 {
-    map<string,Account>::iterator itr= accounts.find(Us);
-    return itr->second;
+    string UserName;
+    cout << "Enter User Name:";
+    cin >> UserName;
+    map<string, Account>::iterator itr = accounts.find(UserName);
+    if (itr == accounts.end())
+    {
+        cout << "There is no username " << UserName << " .PLease try again!" << endl;
+        return;
+    }
+    cout << "\n\n\n";
+    cout << left << setw(40) << "" << setw(40) << "--- Your Account Details ---" << setw(15) << left << "" << endl;
+    cout << "\n\n";
+    printTitle();
+    itr->second.printInfo();
+    cout << "\n\n\n";
 }
-
-
-Account Bank::Deposit(string us,float amount)
+void Bank::Deposit()
 {
-    map<string,Account>::iterator itr=accounts.find(us);
+    string UserName;
+    float amount;
+    cout << "Enter User Name:";
+    cin >> UserName;
+
+    map<string, Account>::iterator itr = accounts.find(UserName);
+    if (itr == accounts.end())
+    {
+        cout << "Username " << UserName << " does not exist" << endl;
+        return;
+    }
+
+    while (true)
+    {
+        cout << "Enter Deposit Amount:";
+        string amount_str;
+        cin >> amount_str;
+
+        if (isNumber(amount_str))
+        {
+            amount = stof(amount_str);
+            break;
+        }
+        else
+        {
+            cout << "Invalid input. Please enter a valid numeric value." << endl;
+        }
+    }
+
     itr->second.Deposit(amount);
-    return itr->second;
+cout<<"\n\n\n";
+    printTitle();
+    itr->second.printInfo();
+    cout<<"\n\n\n";
 }
 
-
-Account Bank::Withdraw(string us,float amount)
+void Bank::Withdraw()
 {
-    map<string,Account>::iterator itr=accounts.find(us);
+    string UserName;
+    float amount;
+    cout << "Enter User Name:";
+    cin >> UserName;
+
+    map<string, Account>::iterator itr = accounts.find(UserName);
+    if (itr == accounts.end())
+    {
+        cout << "Username " << UserName << " does not exist" << endl;
+        return;
+    }
+
+    while (true)
+    {
+        cout << "Enter Withdrawal Amount:";
+        string amount_str;
+        cin >> amount_str;
+
+        if (isNumber(amount_str))
+        {
+            amount = stof(amount_str);
+            break;
+        }
+        else
+        {
+            cout << "Invalid input. Please enter a valid numeric value." << endl;
+        }
+    }
+
+    if (itr->second.getBalance() < amount)
+    {
+        cout << "Insufficient balance for withdrawal" << endl;
+        return;
+    }
+
     itr->second.Withdraw(amount);
-    return itr->second;
+    cout<<"\n\n\n";
+    cout << "Amount Withdrawn" << endl;
+    printTitle();
+    itr->second.printInfo();
+    cout<<"\n\n\n";
 }
-
-
-void Bank::CloseAccount(string us)
+void Bank::CloseAccount()
 {
-    map<string,Account>::iterator itr=accounts.find(us);
-    cout <<"Account Deleted"<<itr->second;
+    string us;
+
+    cout << "Enter User Name:";
+    cin >> us;
+
+    map<string, Account>::iterator itr = accounts.find(us);
+    if (itr == accounts.end())
+    {
+        cout << us << "do not exist" << endl;
+        return;
+    }
     accounts.erase(us);
+    cout << "Account deleted successfully!" << endl;
 }
+
 void Bank::ShowAllAccounts()
 {
-    map<string,Account>::iterator itr;
-    for(itr=accounts.begin();itr!=accounts.end();itr++)
+    int count = 1;
+    if (accounts.empty())
     {
-        cout<<"Account "<<itr->first<<endl<<itr->second<<endl;
+        cout << "There's no account to show" << endl;
+        return;
     }
+    map<string, Account>::iterator itr;
+    cout << "\n\n\n\n";
+    printTitle();
+    for (itr = accounts.begin(); itr != accounts.end(); itr++)
+    {
+        if (itr->second.getAccUserName().empty())
+            continue;
+
+        cout << left << setw(12) << count << setw(25) << itr->second.getAccUserName() << left << std::setw(25) << itr->second.getLastName() << std::setw(25) << itr->second.getFirstName() << std::setw(25) << itr->second.getBalance();
+        cout << "\n"
+             << left << setw(110) << "________________________________________________________________________________________________________" << endl;
+
+        count++;
+    }
+
+    cout << "\n\n\n";
+   
+  while(true){
+     string choice;
+   
+    cout<<"Do you want to sort the account list's balance: "<<endl;
+    cout << "1.Ascending order."<<endl;
+    cout << "2.Descending order."<<endl;
+     cout <<"3.Return back."<<endl;
+     cout<<"Enter you option: ";
+    cin >> choice;
+
+    system("cls");
+   if (choice== "1")
+   {
+    ShowTheAllSortedAccountsByBalanceInAscendingOrder();
+   } else if( choice== "2"){
+    ShowTheAllSortedAccountsByBalanceInDescendingOrder();
+   } else if(choice == "3"){ 
+     return;
+   } else{
+   cout<<"Please choose one of the options!.\n\n";
+   system("pause");
+   }
+   
+
+       
+  }
+   
 }
+void Bank::clearSorted()
+{
+    sorted_accounts.clear();
+}
+
+
+
+void Bank::ShowTheAllSortedAccountsByBalanceInAscendingOrder()
+{
+    int count = 1;
+    if (sorted_accounts.empty())
+    {
+        cout << "There's no account to sort" << endl;
+        return;
+    }
+    multimap<float, Account>::iterator itr;
+    cout << "\n\n\n\n";
+    printTitle();
+    for (itr = sorted_accounts.begin(); itr != sorted_accounts.end(); itr++)
+    {
+        if (itr->second.getAccUserName().empty())
+            continue;
+
+        cout << left << setw(12) << count << setw(25) << itr->second.getAccUserName() << left << std::setw(25) << itr->second.getLastName() << std::setw(25) << itr->second.getFirstName() << std::setw(25) << itr->first;
+        cout << "\n"
+             << left << setw(110) << "________________________________________________________________________________________________________" << endl;
+
+        count++;
+    }
+     
+}
+void Bank::ShowTheAllSortedAccountsByBalanceInDescendingOrder(){
+
+    int count = 1;
+    if (sorted_accounts.empty())
+    {
+        cout << "There's no account to sort" << endl;
+        return;
+    }
+ 
+    cout << "\n\n\n\n";
+    printTitle();
+    for (auto itr = sorted_accounts.rbegin(); itr != sorted_accounts.rend(); itr++)
+    {
+        if (itr->second.getAccUserName().empty())
+            continue;
+
+        cout << left << setw(12) << count << setw(25) << itr->second.getAccUserName() << left << std::setw(25) << itr->second.getLastName() << std::setw(25) << itr->second.getFirstName() << std::setw(25) << itr->first;
+        cout << "\n"
+             << left << setw(110) << "________________________________________________________________________________________________________" << endl;
+
+        count++;
+    }
+
+}
+// void Bank::ShowTransitionHistory()
+// {
+
+//     int count = 1;
+//     if (accounts.empty())
+//     {
+//         cout << "Not thing to show" << endl;
+//         return;
+//     }
+//     cout << left << setw(10) << "Index " << setw(15) << "Time " << setw(15) << "Date "
+//          << setw(25) << "Username " << setw(25) << "Status " << setw(15) << "Amount " << endl;
+//     for (auto it = accounts.begin(); it != accounts.end(); it++){
+//         (it->second).printAccountActivity(count);
+//     }
+// }
+
 Bank::~Bank()
 {
     ofstream outfile;
-    outfile.open("Bank.data", ios::trunc);
+    outfile.open("data.txt", ios::app);
 
-    map<string,Account>::iterator itr;
-    for(itr=accounts.begin();itr!=accounts.end();itr++)
+    if (!outfile.is_open())
     {
-    outfile<<itr->second;
+        cout << "Error in Opening File!" << endl;
+        return;
     }
+
+    map<string, Account>::iterator itr;
+    for (itr = accounts.begin(); itr != accounts.end(); itr++)
+    {
+        if (itr->second.getAccUserName().empty() || itr->second.getFirstName().empty() || itr->second.getLastName().empty())
+        {
+            continue;
+        }
+        outfile << itr->second.getAccUserName() << ',';
+        outfile << itr->second.getFirstName() << ',';
+        outfile << itr->second.getLastName() << ',';
+        outfile << itr->second.getBalance() << " " << '\n';
+    }
+    outfile.flush();
     outfile.close();
 }
