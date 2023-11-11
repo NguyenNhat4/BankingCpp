@@ -1,7 +1,9 @@
 #include <iostream>
 #include "Bank.h"
 using namespace std;
-
+//
+// Created by minhnhat on 10/13/2023.
+//
 
 void displayMenu();
 
@@ -51,7 +53,7 @@ string tmp;
                 break;
             case 6:
                 b.ShowAllAccounts();
-              
+              system("pause");
                 break;
             case 7:
                return 0;

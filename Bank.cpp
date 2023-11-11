@@ -1,3 +1,6 @@
+//
+// Created by minhnhat on 10/18/2023.
+//
 #include <iostream>
 #include "Bank.h"
 using namespace std;
@@ -338,21 +341,6 @@ void Bank::ShowTheAllSortedAccountsByBalanceInDescendingOrder(){
     }
 
 }
-// void Bank::ShowTransitionHistory()
-// {
-
-//     int count = 1;
-//     if (accounts.empty())
-//     {
-//         cout << "Not thing to show" << endl;
-//         return;
-//     }
-//     cout << left << setw(10) << "Index " << setw(15) << "Time " << setw(15) << "Date "
-//          << setw(25) << "Username " << setw(25) << "Status " << setw(15) << "Amount " << endl;
-//     for (auto it = accounts.begin(); it != accounts.end(); it++){
-//         (it->second).printAccountActivity(count);
-//     }
-// }
 
 Bank::~Bank()
 {
